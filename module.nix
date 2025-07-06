@@ -17,23 +17,23 @@ let
     lazyAttrsOf
     oneOf
     submodule
-    str
+    lines
     listOf
     ;
   textType = oneOf [
-    str
+    lines
     (submodule {
       options = {
         heading = mkOption {
-          type = str;
+          type = lines;
           default = "";
         };
         description = mkOption {
-          type = str;
+          type = lines;
           default = "";
         };
         order = mkOption {
-          type = listOf str;
+          type = listOf lines;
           default = [ ];
         };
         parts = mkOption { type = lazyAttrsOf textType; };
@@ -77,4 +77,3 @@ in
     );
   };
 }
-
